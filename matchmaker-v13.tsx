@@ -125,7 +125,7 @@ function computeScore(p, h) {
   const familyS = calcFamilyScore(p);
   const mul = cityMul[p.cityTier] || 1;
   const totalAssets = Number(p.assets || 0) + Number(p.propertyValue || 0);
-  const habitAdj = calcHabitAdj(h, p.gender) * 0.5;
+  const habitAdj = calcHabitAdj(h, p.gender) * 0.3;
   // Divorce/remarriage penalty
   const divorcePenalty = p.marriageHistory === "divorced_no_child" ? -0.5 : p.marriageHistory === "divorced_with_child" ? (p.gender === "female" ? -2.0 : -1.0) : 0;
 
@@ -211,7 +211,7 @@ function generateReport(p, h, exp, score, expScore) {
   const income = Number(p.income);
   const assets = Number(p.assets || 0) + Number(p.propertyValue || 0);
   const looks = Number(p.looks);
-  const habitAdj = calcHabitAdj(h, p.gender) * 0.5;
+  const habitAdj = calcHabitAdj(h, p.gender) * 0.3;
   const lvl = getMarketLevel(score);
   const profLabel = (professions[p.gender].find(x => x.value === p.profession) || {}).label || p.profession;
 
