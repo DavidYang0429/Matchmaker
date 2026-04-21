@@ -133,7 +133,7 @@ function computeScore(p, h) {
   if (p.gender === "male") {
     raw = (incomeS * 3 + assetS * 2 + looksS * 1 + eduS * 1 + profS * 1.5 + ageW * 1 + familyS * 0.5) / 10;
   } else {
-    raw = (looksS * 3 + ageW * 2.5 + familyS * 1.5 + eduS * 1 + profS * 1 + incomeS * 0.5) / 9.5;
+    raw = (looksS * 2.5 + ageW * 2 + familyS * 1.5 + eduS * 1 + profS * 1 + incomeS * 1.0 + assetS * 0.5) / 9.5;
   }
   return Math.min(10, Math.max(1, raw * mul + habitAdj + divorcePenalty));
 }
